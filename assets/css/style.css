@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: grid;
+    grid-template-areas: "menu filtros filtros"
+        "menu main main "
+        "footer main main";
+}
+
+.box {
+    padding: 5px;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: #b59df7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+
+}
+
+.menu h1 {
+    font-size: 40px;
+    color: #fff;
+}
+
+.menu a {
+    font-size: 25px;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 11px;
+    gap: 10px;
+}
+
+.links a {
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: bisque;
+}
+
+.hamburguesa {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.filtros {
+    grid-area: filtros;
+    grid-area: filtros;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffd7e3;
+}
+
+label {
+    display: flex;
+    justify-content: center;
+}
+
+select {
+    margin: 10px;
+    padding: 10px;
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 32px;
+    background-color: #fff;
+    gap: 32px;
+    overflow: auto;
+}
+
+.btn-toolbar {
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    align-items: center;
+    justify-items: center;
+}
+
+.producto img {
+    width: 310px;
+    height: 310px;
+    margin: 10px;
+
+}
+
+.producto button {
+    background-color: palevioletred;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+
+.pie-pagina {
+    grid-area: footer;
+    background-color: #5a468e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+}
+
+@media (max-width: 576px) {
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: "menu"
+            "filtros"
+            "main"
+            "footer";
+    }
+
+    .menu {
+        grid-area: menu;
+        background-color: #b59df7;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        color: #fff;
+
+    }
+
+    .hamburguesa {
+        display: flex;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+    .hamburguesa:hover {
+        scale: 1.2;
+        cursor: pointer
+    }
+
+    .menu {
+        width: 100%;
+        height: 70px;
+    }
+
+    .links {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        flex-direction: column;
+        display: none;
+        padding: 1rem;
+        height: 40px;
+    }
+
+    .menu h1 {
+        font-size: 30px;
+    }
+
+    .filtros {
+        grid-area: filtros;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: flex-start;
+    }
+
+    .producto img {
+        width: 200px;
+        height: 200px;
+        margin: 15px;
+    }
+
+    .btn-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    .footer {
+        width: 100%;
+        height: 70px;
+    }
+
+}
